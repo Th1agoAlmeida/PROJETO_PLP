@@ -1,0 +1,50 @@
+nav{
+	background-color: #0080ff;
+	margin-top: -10px;	
+
+}
+nav > a{
+	margin-top: 2px;
+	color:white;
+	font-size: 1.9em;
+	font-family: 'Roboto Mono', monospace;
+	text-decoration: none;
+    display: block;
+   	justify-content:flex-end;
+   	padding: 20px;
+   	
+}
+nav > a:hover{
+	font-weight:700;
+	}
+.ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+	color: white;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+.ul li a {
+	font-family: 'Roboto Mono', monospace;
+    font-size: 1.3em;
+    font-weight:200;
+    color: #c0c0c0;
+    text-decoration: none;
+    display: block;
+   	justify-content:flex-end;
+    margin-top: -48px;
+}
+
+.ul li a:hover {
+    color: #f1f1f1;
+	font-weight: 650;
+}
+#a1{
+	margin-left:1155px;
+}
+#a2{
+	margin-left:15px;
+}

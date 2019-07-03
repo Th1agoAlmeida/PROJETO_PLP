@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="TelaInicial.css" />
+	<title>CourseBook</title>
+
+	<script type="text/javascript"> 
+		// <![CDATA[
+		var imageCount = 0;
+		var currentImage = 0;
+		var images = new Array();
+
+		images[0] = 'img/img5.png';
+		images[1] = 'img/img8.png';
+		images[2] = 'img/img4.jpg';
+				
+		var preLoadImages = new Array();
+		for (var i = 0; i < images.length; i++) {
+			if (images[i] == "")
+				break;
+
+			preLoadImages[i] = new Image();
+			preLoadImages[i].src = images[i];
+			imageCount++;
+		}
+
+		function startSlideShow() {
+			if (document.body && imageCount > 0) {
+				document.body.style.backgroundImage = "url("
+						+ images[currentImage] + ")";
+				document.body.style.backgroundAttachment = "fixed";
+				document.body.style.backgroundRepeat = "repeat";
+				document.body.style.backgroundPosition = "left top";
+
+				currentImage = currentImage + 1;
+				if (currentImage > (imageCount - 1)) {
+					currentImage = 0;
+				}
+			}
+		}
+		setInterval('startSlideShow()', 5000);
+		// ]]>
+	</script>
+</h:head>
+<h:body>
+
+	<nav>
+	<a href="TelaInicial.jsf">CourseBook</a>
+		<ul>
+			<li><a id="a1" href="Contato.jsf">Contato  |</a></li>
+			<li><a id="a2" href="Sobre.jsf">Sobre</a></li>
+		</ul>
+	</nav>
+
+	<h1>Qual é o seu Curso?</h1>
+    	<h:form>
+		<div class="ui-g-12 ui-md-4">
+			<div class="ui-inputgroup">
+				<p:inputText placeholder="ex: computação upe"
+					value="#{cursosBean.curso}" size="50"
+					style="	
+					border-top-left-radius: 20px; border-bottom-left-radius: 20px;
+					border-top-right-radius: 20px; border-bottom-right-radius: 20px;
+					margin-left: 375px; padding:10px; padding-right:100px; margin-top: 50px;" />
+
+				<p:commandButton action="#{cursosBean.carregarCurso}" value=""
+					style="border-top-right-radius: 20px; border-bottom-right-radius: 20px;
+	  				margin-top: 50px; 	opacity: 0; filter: alpha(opacity = 0);
+	  				background-color: #ffffff;" />
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

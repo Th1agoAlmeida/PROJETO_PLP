@@ -1,0 +1,19 @@
+* {
+ margin: 0px;
+ padding:0px;
+}
+#sobre{
+	padding:100px;
+	background-color: white;
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+h1{
+	font-size: 30px;
+	font-family: 'Roboto Mono', monospace;
+}
+p{
+	text-align:justify;
+	font-size: 25px;
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 50px;
+}
